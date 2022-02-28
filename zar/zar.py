@@ -62,6 +62,27 @@ while len(ujkod) < len(be):
 #5. feladat 2.0
 print("Egy " + str(len(ujkod)) + " hosszú kódszám: " + ujkod)
 
+Függvény nyit(jo, proba:karaktersorozat): logikai érték 
+ egyezik:=(hossz(jo)=hossz(proba)) 
+ Ha egyezik akkor 
+ elteres=ascii(jo[1])-ascii(proba[1]) 
+ Ciklus i:=2-től hossz(jo) 
+ Ha ( elteres - (ascii(jo[i])-ascii(proba[i])) ) mod 10 <> 0 
+ akkor egyezik:=hamis 
+ Ciklus vége 
+ Elágazás vége 
+ nyit:=egyezik 
+ Függvény vége 
+
+#6. feladat
+def nyit(jo, proba):
+    egyezik = len(jo) == len(proba)
+    if egyezik:
+        elteres = ord(jo[0]) - ord(proba[0])
+        for i in range(1, len(jo)):
+            if (elteres - (ord(jo[i]) - ord(proba[i]))) % 10 != 0:
+                egyezik = False
+    return egyezik
 
 
 
@@ -70,7 +91,12 @@ print("Egy " + str(len(ujkod)) + " hosszú kódszám: " + ujkod)
 
 
 
-        
+
+
+
+
+
+
 
 
 
