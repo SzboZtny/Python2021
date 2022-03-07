@@ -13,3 +13,4 @@ print("A fizetések száma: " + str(kosar.count("F")))
 
 print("3. feladat:")
 print("Az első vásárló " + str(kosar.append("F")) + " darab árucikket vásárolt.")
+
