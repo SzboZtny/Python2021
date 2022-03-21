@@ -54,6 +54,7 @@ for e in kosar:
             voltF = True
     if e == "F":
         voltF = False
+        
 print(str(szam) + " vásárlás során vettek belőle.")
 
 print(str(vasarlasDb) + " darab vételekor fizetendő: " + str(ertek(vasarlasDb)))
@@ -83,9 +84,6 @@ for e in darabKosar:
     else:
         stat[e] = 1
 
-print(stat)
-
-
-
-
-
+#print(stat)
+for e in stat:
+    print(str(stat[e]) + " " + e)
