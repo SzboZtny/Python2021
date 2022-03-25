@@ -32,14 +32,14 @@ else:
     print("Nincs találat!")
 
 adatok2 = []
-for e in adatok2:
+for e in adatok:
     temp = e.split(";")
     temp[1] = int(temp[1])
     temp[2] = int(temp[2])
     adatok2.append(temp)
-print(adatok2)
+#print(adatok2)
 
-talalat = [e for e in adatok if e.find(kulcsSzo) > -1]
+talalat = [e for e in adatok2 if e[0].find(kulcsSzo) >= -1]
 #print(talalat)
 if len(talalat):
     print("Van találat!")
@@ -48,7 +48,20 @@ else:
 
 
 print("5. feladat:")
+for e in talalat:
+    print("\t" + e[0] + " " + str(e[1] + e[2]) + " fő")
 
+#Pythonos megoldás:
+print("\n".join(["\t" + e[0] + " " + str(e[1] + e[2]) + " fő" for e in talalat]))
+
+print("6. feladat:")
+arany = []
+for e in adatok2:
+    if e[2] / (e[1] + e[2]) > 0.6:
+        arany.append(e[0])
+
+for e in arany:
+    print("\t" + e)
 
 
 
