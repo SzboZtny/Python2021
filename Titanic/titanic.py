@@ -83,17 +83,3 @@ print("7. feladat: " + maxkat)
 print("7. feladat:")
 print(sum([e[1] for e in adatok2]))
 print([k[0] for k in adatok2 if k[1] == sum([e[1] for e in adatok2])][0])
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
