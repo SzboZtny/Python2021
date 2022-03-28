@@ -52,7 +52,9 @@ for e in talalat:
     print("\t" + e[0] + " " + str(e[1] + e[2]) + " fő")
 
 #Pythonos megoldás:
+print("5. feladat:")
 print("\n".join(["\t" + e[0] + " " + str(e[1] + e[2]) + " fő" for e in talalat]))
+
 
 print("6. feladat:")
 arany = []
@@ -62,6 +64,26 @@ for e in adatok2:
 
 for e in arany:
     print("\t" + e)
+
+#Pythonos megoldás:
+print("6. feladat:")
+print("\n".join(["\t" + e[0] for e in adatok2 if e[2] / (sum(e[1:])) > 0.6]))
+
+
+maximum = -1
+maxkat = ""
+for e in adatok2:
+    if e[1] > maximum:
+        maximum = e[1]
+        maxkat = e[0]
+
+print("7. feladat: " + maxkat)
+
+#Pythonos megoldás:
+print("7. feladat:")
+print(sum([e[1] for e in adatok2]))
+print([k[0] for k in adatok2 if k[1] == sum([e[1] for e in adatok2])][0])
+        
 
 
 
