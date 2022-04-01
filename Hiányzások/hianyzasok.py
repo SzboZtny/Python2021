@@ -1,4 +1,5 @@
 #2. verzió
+#1. verzió
 #1. feladat:
 f = open("naplo.txt")
 adatok = f.read().split("\n")
