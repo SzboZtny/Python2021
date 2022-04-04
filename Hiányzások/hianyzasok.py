@@ -60,12 +60,31 @@ print("Ekkor összesen " + str(db) + " óra hiányzás történt.")
 db = [e[3][ora-1] in ("X", "I") for e in naplo if hetnapja(e[0], e[1]) == napnev]
 print(db)
 
+stat = {}
+for e in naplo:
+    if e[2] in stat.keys():
+        stat[e[2]] += e[3].count("X") + e[3].count("I")
+    else:
+        stat[e[2]] = e[3].count("X") + e[3].count("I")
 
+maximum = 0
+for e in stat:
+    if stat[e] > maximum:
+        maximum = stat[e]
 
+#print(maximum)
 
+print("A legtöbbet hiányzó tanulók: ", end = "")
+for e in stat:
+    if stat[e] > maximum:
+        print(e, end = " ")
 
+print()
 
+maximum = max(stat.values())
+leg = [e for e in stat if stat[e] == maximum]
+print(leg)
+print("A legtöbbet hiányzó tanulók: ", " ".join(leg))
 
-
-
-
+#print(stat)
+#print(max(stat))
