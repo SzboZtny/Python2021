@@ -1,8 +1,8 @@
 menu_options = {
-    1: "Autók listája és adatai",
+    1: "Autók adatai",
     2: "Bérlési árak",
-    3: "Szabályzat",
-    4: "Információk a cégről",
+    3: "Bérlések időpontja",
+    4: "Sofőrök adatai",
     5: "Kilépés",
 }
 
