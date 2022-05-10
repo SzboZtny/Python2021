@@ -5,13 +5,25 @@ menu_options = {
     4: "Kilépés",
 }
 
+def menu1():
+    print(menu_options[1])
+
+def menu2():
+    print(menu_options[2])
+
+def menu3():
+    print(menu_options[3])
+
 def print_menu():
     #print(menu_options)
     for menupontIndex in menu_options:
         minta = "{} --- {}"
         print(minta.format(menupontIndex, menu_options[menupontIndex]))
         #print(menu_options[menupontIndex])
+    print("============================================")
     pass
+
+print("================ Menüpontok ================")
 
 while (True):
     print_menu()
@@ -22,13 +34,12 @@ while (True):
         pass
 
     if option == 1:
-        print("egy")
+        menu1()
     elif option == 2:
-        print("kettő")
+        menu2()
     elif option == 3:
-        print("három")
+        menu3()
     elif option == 4:
-        print("négy")
-
+        break
     else:
         print("Nincs ilyen menüpont!")
