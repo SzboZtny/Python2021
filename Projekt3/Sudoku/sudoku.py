@@ -1,9 +1,15 @@
 import math
 def oszlopban_van_e(oszlop, ertek):
     for o in tabla:
-        if o(oszlop) == ertek:
+        if o[oszlop] == ertek:
             return True
     return False
+
+def resztabla(sor, oszlop):
+    s = math.ceil(sor + 1 / 3) - 1
+    o = math.ceil(oszlop + 1 / 3)
+
+    return s * 3 + o
 
 print("1. feladat:")
 #filenev = input("Adja meg a bemeneti fájl nevét! ")
@@ -28,14 +34,9 @@ for _sor in adatok:
         temp.append(int(elem))
         
     adatok2.append(temp)
-    
-#print(adatok)
-#print(adatok2)
 
 tabla = adatok[:9]
 lepesek = adatok[9:]
-#print(tabla)
-#print(lepesek)
 
 print("3. feladat:")
 if tabla[sor-1][oszlop-1] == 0:
@@ -56,12 +57,17 @@ for s in tabla:
 print("4. feladat:")
 print("Az üres helyek aránya: {:.0%}".format(db / 81))
 
+print("5. feladat:")
 for lepes in lepesek:
     t_s = int(lepes[1])-1 #temp sor
     t_o = int(lepes[2])-1 #temp oszlop
-    
-    print(lepes)
-    print(tabla[int(lepes[1])-1][int(lepes[2])-1])
+
+    volt = False
+    for i in range(0, 9):
+        for k in range(0, 9):
+            if (resztabla(t_s, t_o)) == (resztabla(i, k)):
+                if tabla[i][k] == lepes[0]:
+                    volt = True
 
     print(lepes[0] in [int(lepes[1])-1])
     if (tabla[int(lepes[1])-1][int(lepes[2])-1]) != "0":
@@ -70,32 +76,7 @@ for lepes in lepesek:
         print("Az adott sorban már szerepel a szám")
     elif oszlopban_van_e(t_o, lepes[0]):
         print("Az adott oszlopban már szerepel a szám")
-        
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    elif volt:
+        print("Az adott résztáblázatban már szerepel a szám")
+    else:
+        print("A lépés megtehető")
