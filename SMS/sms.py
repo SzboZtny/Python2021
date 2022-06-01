@@ -74,23 +74,3 @@ for a in smsek:
             idotav.append(a.idoperc()-elozo)
             elozo = a.idoperc()
 print(idotav)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
