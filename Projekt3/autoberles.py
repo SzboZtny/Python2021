@@ -1,3 +1,7 @@
+f = open("autok.txt")
+adatok = f.read()
+f.close()
+
 menu_options = {
     1: "Autók adatai",
     2: "Bérlési árak",
